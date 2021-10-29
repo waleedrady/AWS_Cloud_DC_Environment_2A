@@ -64,7 +64,7 @@ output "hub1_Windows_DNS_Name" {
 }
 
 output "hub1_Windows_Password" {                                    # Your AWS KEY file below
-  value = rsadecrypt(module.DC_Enviroment_2B.hub1_Windows_Password, file("./AWS_Key.pem"))
+  value = rsadecrypt(module.DC_Enviroment_2A.hub1_Windows_Password, file("./AWS_Key.pem"))
 }
 
 # ---------------- ---------------- ---------------- spoke 1
@@ -89,5 +89,5 @@ output "spoke1_Windows_DNS_Name" {
   value = module.DC_Enviroment_2A.spoke1_Windows_DNS_Name
 }
 output "spoke1_Windows_Password" {                                    # Your AWS KEY file below
-  value = rsadecrypt(module.DC_Enviroment_2B.spoke1_Windows_Password, file("./AWS_KEY.pem"))
+  value = rsadecrypt(module.DC_Enviroment_2A.spoke1_Windows_Password, file("./AWS_KEY.pem"))
 }
